@@ -21,7 +21,7 @@ export class ContentListComponent implements OnInit {
       body: 'Earth\'s Mightiest Heroes stand as the planet\'s first line of defense against the most powerful threats in the universe. The Avengers began as a group of extraordinary individuals who were assembled to defeat Loki and his Chitauri army in New York City.',
       imgUrl: 'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg',
       tags: ['Action', 'Adventure', 'Superhero'],
-      type: 'Superhero Marvel comics'
+      type: 'Superhero Marvel comics.'
     },
     {
       id: 2,
@@ -48,7 +48,7 @@ export class ContentListComponent implements OnInit {
       body: 'Based on Disneyland\'s theme park ride where a small riverboat takes a group of travelers through a jungle filled with dangerous animals and reptiles but with a supernatural element.',
       imgUrl: 'https://m.media-amazon.com/images/M/MV5BNDE1MGRlNTQtZjc4ZC00MTI0LWEwY2MtODk1YTM2NmFmYTNmXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg',
       tags: ['Action', 'Comedy', 'Fantasy'],
-      type: 'Inspired by the story of Amanda Knox'
+      type: 'Inspired by the story of Amanda Knox.'
     },
     {
       //no image
@@ -57,7 +57,7 @@ export class ContentListComponent implements OnInit {
       title: 'Cinderella',
       body: 'Cinderella, the beautiful and kind-hearted daughter, sees her world turn upside down when her beloved mother dies, and her pained father remarries another woman, the wicked Lady Tremaine, who has two equally cruel daughters, the jealous Anastasia and Drizella.',
       tags: ['Romance', 'Children\'s film'],
-      type: 'Disney\'s Cinderella Cendrillon by Charles Perrault'
+      type: 'Disney\'s Cinderella Cendrillon by Charles Perrault.'
     },
     {
       id: 6,
@@ -66,7 +66,7 @@ export class ContentListComponent implements OnInit {
       body: 'Spider-Man has spider-like abilities including superhuman strength and the ability to cling to most surfaces. He is also extremely agile and has amazing reflexes. Spider-Man also has a “spider sense,” that warns him of impending danger. Spider-Man has supplemented his powers with technology.',
       imgUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Spider-Man_PS4_cover.jpg/220px-Spider-Man_PS4_cover.jpg',
       tags: ['Action', 'Superhero'],
-      type: 'Based on the character from Marvel Comics'
+      type: 'Based on the character from Marvel Comics.'
     },
   ];
 }
