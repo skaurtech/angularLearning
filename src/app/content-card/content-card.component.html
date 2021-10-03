@@ -1,6 +1,7 @@
 <h1>Movie: {{content.id}}</h1>
 <article class="content-{{ content.id }}">
   <h1 class="title">{{ content.title }}</h1>
+
   <section>
     <div *ngIf="content.imgUrl">
       <img src="{{ content.imgUrl }}" (click)="onImageClick(content.id)" class="content-image" />
