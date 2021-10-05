@@ -10,7 +10,6 @@ export class ContentCardComponent implements OnInit {
 
   @Input()
   content: Content;
-
   constructor() {}
 
   onImageClick(id: number) {
