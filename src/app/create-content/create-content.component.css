@@ -13,6 +13,9 @@ input {
   padding: 4px;
   margin: 10px;
 }
+div.alert-danger{
+  color: crimson;
+}
 button {
   padding: 10px;
 }

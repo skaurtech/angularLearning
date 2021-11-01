@@ -37,7 +37,7 @@ error?: string;
       if (body && title && author) {
         this.error = undefined;
         this.newContentEvent.emit(this.newContent);
-        success(`News Added! - ${this.newContent.title}`);
+        success(`Added! - ${this.newContent.title}`);
       } else {
         this.error = `please fill the required fields: ${
           title ? '' : 'title, '
