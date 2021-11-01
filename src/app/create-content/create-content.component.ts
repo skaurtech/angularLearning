@@ -39,7 +39,7 @@ error?: string;
         this.newContentEvent.emit(this.newContent);
         success(`News Added! - ${this.newContent.title}`);
       } else {
-        this.error = `You need to add all required fields: ${
+        this.error = `please fill the required fields: ${
           title ? '' : 'title, '
         } ${body ? '' : 'body,'} ${author ? '' : ' and author'}`;
         fail(this.error);
