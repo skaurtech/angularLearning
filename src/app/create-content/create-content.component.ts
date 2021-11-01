@@ -40,8 +40,8 @@ error?: string;
         success(`News Added! - ${this.newContent.title}`);
       } else {
         this.error = `You need to add all required fields: ${
-          title ? '' : 'title'
-        } ${body ? '' : 'body'} ${author ? '' : 'author'}`;
+          title ? '' : 'title, '
+        } ${body ? '' : 'body,'} ${author ? '' : ' and author'}`;
         fail(this.error);
       }
     });
