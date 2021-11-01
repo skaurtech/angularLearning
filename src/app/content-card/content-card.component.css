@@ -35,11 +35,15 @@
   align: left;
   float: left;
   padding: 2px;
-  border-radius: 15px;
-  border: 3px solid #736d73;
 }
 
 p {
   font-size: 18px;
   text-align: center;
+}
+.adventure {
+  border-color: red;
+}
+.action {
+  border-color: orange;
 }
