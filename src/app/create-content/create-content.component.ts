@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import {ContentService} from "../services/content.service";
 
 @Component({
   selector: 'app-create-content',
@@ -8,10 +9,11 @@ import { Content } from '../helper-files/content-interface';
 })
 export class CreateContentComponent implements OnInit {
 @Output() newContentEvent = new EventEmitter<Content>();
+  @Output() updateContentEvent = new EventEmitter<string>();
 newContent: Content;
 
 error?: string;
-  constructor() { }
+  constructor(private contentService: ContentService) {}
 
   ngOnInit(): void {
   }
@@ -32,23 +34,72 @@ error?: string;
       imgUrl: imgUrl,
       type: type,
       tags: [tags]
-  };
-    let promiseToAddNews = new Promise((success, fail) => {
-      if (body && title && author) {
-        this.error = undefined;
-        this.newContentEvent.emit(this.newContent);
-        success(`Added! - ${this.newContent.title}`);
-      } else {
-        this.error = `please fill the required fields: ${
-          title ? '' : 'title, '
-        } ${body ? '' : 'body,'} ${author ? '' : ' and author'}`;
-        fail(this.error);
-      }
-    });
+    };
+    if (body && title && author) {
+      this.error = undefined;
+      this.contentService
+        .addNewContent(this.newContent)
+        .subscribe((serverContent) => {
+          this.newContent = serverContent;
+          this.newContentEvent.emit(this.newContent);
+          console.log(this.newContent.title);
+        });
+    } else {
+      this.error = `You need to add all required fields: ${
+        title ? '' : 'title,'
+      } ${body ? '' : 'body, and'} ${author ? '' : 'author'}`;
+    }
+  }
+  onUpdateNews(
+    id: string,
+    title: string,
+    body: string,
+    author: string,
+    imgUrl: string,
+    type: string,
+    tags: string
+  ) {
+    this.newContent = {
+      id: +id,
+      title: title,
+      body: body,
+      author: author,
+      imgUrl: imgUrl,
+      type: type,
+      tags: [tags],
+    };
 
-    promiseToAddNews
-      .then((successMessage) => console.log(successMessage))
-      .catch((failMessage) => console.log(failMessage));
+    console.log(this.newContent);
+
+    if (body && title && author) {
+      this.error = undefined;
+      this.contentService
+        .updateContent(this.newContent)
+        .subscribe((response) => {
+          console.log(response);
+        });
+    } else {
+      this.error = `You need to add all required fields: ${
+        title ? '' : 'title,'
+      } ${body ? '' : 'body, and'} ${author ? '' : 'author'}`;
+    }
   }
 }
+
+//   let promiseToAddNews = new Promise((success, fail) => {
+  //     if (body && title && author) {
+  //       this.error = undefined;
+  //       this.newContentEvent.emit(this.newContent);
+  //       success(`Added! - ${this.newContent.title}`);
+  //     } else {
+  //       this.error = `please fill the required fields: ${
+  //         title ? '' : 'title, '
+  //       } ${body ? '' : 'body,'} ${author ? '' : ' and author'}`;
+  //       fail(this.error);
+  //     }
+  //   });
+  //
+  //   promiseToAddNews
+  //     .then((successMessage) => console.log(successMessage))
+  //     .catch((failMessage) => console.log(failMessage));
 
