@@ -1,3 +1,4 @@
+<form onsubmit="return false;">
 <app-create-content (newContentEvent)="addContentToList($event)"
                     (updateContentEvent)="updateContentInList($event)"></app-create-content>
 
@@ -6,16 +7,22 @@
   <input #search placeholder="Search">
   <button (click)="searchContent(search.value)">Search</button>
 </div>
-
-<app-content-card *ngFor="let content of (contentList | filterContent:'news'); " [content]="content"
-                  class="content-card {{content.type}}" >
-  {{ content }}
-</app-content-card>
-<app-content-card *ngFor="let content of (contentList | filterContent:'action'); " [content]="content"
-                  class="content-card {{content.type}}" >
-  {{ content }}
-</app-content-card>
+</form>
+<!--<app-content-card *ngFor="let content of (contentList | filterContent:'news'); " [content]="content"-->
+<!--                  class="content-card {{content.type}}" >-->
+<!--  {{ content }}-->
+<!--</app-content-card>-->
+<!--<app-content-card *ngFor="let content of (contentList | filterContent:'action'); " [content]="content"-->
+<!--                  class="content-card {{content.type}}" >-->
+<!--  {{ content }}-->
+<!--</app-content-card>-->
 <!--<app-content-card *ngFor="let content of contentList; index as i; last as isLast" [content]="content"-->
 <!--                  class="content-list-{{i}}" [class.is-last]="isLast">-->
 <!--  {{ content }}-->
 <!--</app-content-card>-->
+<div class="boxChild">
+  <mat-divider></mat-divider>
+  <app-content-card *ngFor="let item of contentList; last as isLast" [class.is-last]="isLast" [content] = "item"
+                    [class.hightlight-me] = "search.value === item.title" class="comics" >
+  </app-content-card>
+</div>

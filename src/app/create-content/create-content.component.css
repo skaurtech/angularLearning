@@ -1,30 +1,9 @@
-div.form {
-  width: 80%;
-  margin: 0 auto;
-  padding: 10px;
+div form {
+  border: 3px solid #ef2b2b;
 }
-div.form-group {
-  padding: 5px;
-  width: 70%;
-}
-input {
-  width: 50%;
-  font-size: 18px;
-  padding: 4px;
-  margin: 10px;
-}
-div.alert-danger{
-  color: crimson;
-  font-size: 18px;
-}
-
 button {
-  padding: 5px;
-  border: 1px solid black;
-  width: 100%;
-  font-size: 18px;
-  margin: 10px;
-}
-button:hover {
-  cursor: pointer;
+  border: 3px solid #000000;
+  width: 60%;
+  padding: 10px;
+  margin: 25px;
 }

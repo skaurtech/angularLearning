@@ -1,0 +1,41 @@
+<div class="class">
+  <h1 mat-dialog-title>Movies:</h1>
+  <div class="mat-form">
+
+    <mat-form-field>
+      <mat-label>Title: </mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.title" placeholder="*Enter the title" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Author: </mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.author" placeholder="*Enter the author name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Body: </mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.body" placeholder="*Enter the body" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Type: </mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.type" placeholder="*Enter the type" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Image URL:</mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.imgUrl" placeholder="*Enter the Image Url" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tags: </mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.tags" placeholder="*Enter the tags" />
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button color="warn"(click)="onNoClick()" >Cancel</button>
+      <button mat-raised-button color="accent" [mat-dialog-close]="newContent" class="mr-2">Add Movies</button>
+    </div>
+  </div>
+</div>
+
