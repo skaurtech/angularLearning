@@ -1,21 +1,44 @@
 <h1>Movie: {{content.id}}</h1>
-<article class="content-{{ content.id }}">
-  <h1 appHoverStyle [borderColor]="'#ef9d0e'" class="title">{{ content.title }}</h1>
-  <p class="author"><strong>Author:</strong> {{ content.author }}</p>
-
-  <section>
+<div class="box">
+  <article class="borderBox">
     <div>
-      <img *ngIf="content.imgUrl; else imageNotFound" src="{{ content.imgUrl }}" (click)="onImageClick(content.id)" class="content-image" />
-      <ng-template #imageNotFound>
-        <img src="https://drudesk.com/sites/default/files/2018-02/404-error-page-not-found.jpg" (click)="onImageClick(content.id)" class="content-image" />
-      </ng-template>
+      <h1 appHoverStyle [borderColor]="'#000000'" class="title">{{ content.title }}</h1>
     </div>
-  </section>
+    <section>
+      <div>-->
+              <img *ngIf="content.imgUrl; else imageNotFound" src="{{ content.imgUrl }}" (click)="onImageClick(content.id)" class="content-image" />
+              <ng-template #imageNotFound>
+                <img src="https://drudesk.com/sites/default/files/2018-02/404-error-page-not-found.jpg" (click)="onImageClick(content.id)" class="content-image" />
+              </ng-template>
+            </div>
+    </section>
+    <div>
+      <p appHoverStyle [fontWeight] ="'bold'" class="author" *ngIf="content.author != '' "><strong>Author:</strong> {{ content.author }}</p>
+    </div>
+    <section>
+      <p class="body" *ngIf="content.body != '' "><strong>Body:</strong> {{ content.body }}</p>
+      <p class="type" *ngIf="content.type != '' "><strong>Type:</strong> {{ content.type }}</p>
+      <p class="tags" *ngIf="content.tags.length != 0 "><strong>Tags:</strong> {{ content.tags }}</p>
+    </section>
+  </article>
+</div>
+<!--<article class="content-{{ content.id }}">-->
+<!--  <h1 appHoverStyle [borderColor]="'#ef9d0e'" class="title">{{ content.title }}</h1>-->
+<!--  <p class="author"><strong>Author:</strong> {{ content.author }}</p>-->
 
-  <section>
-    <p class="body" *ngIf="content.body">{{ content.body }}</p>
-    <p class="type" *ngIf="content.type"><strong>Type: </strong> {{ content.type }}</p>
-    <p class="tags" *ngIf="content.tags"><strong>Tags: </strong> <span *ngFor="let tag of content.tags;" appHoverStyle [fontWeight]='"bold"'>{{ tag }} </span></p>
-<!--    <p class="author"><strong>Author:</strong> {{ content.author }}</p>-->
-  </section>
-</article>
+<!--  <section>-->
+<!--    <div>-->
+<!--      <img *ngIf="content.imgUrl; else imageNotFound" src="{{ content.imgUrl }}" (click)="onImageClick(content.id)" class="content-image" />-->
+<!--      <ng-template #imageNotFound>-->
+<!--        <img src="https://drudesk.com/sites/default/files/2018-02/404-error-page-not-found.jpg" (click)="onImageClick(content.id)" class="content-image" />-->
+<!--      </ng-template>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--  <section>-->
+<!--    <p class="body" *ngIf="content.body">{{ content.body }}</p>-->
+<!--    <p class="type" *ngIf="content.type"><strong>Type: </strong> {{ content.type }}</p>-->
+<!--    <p class="tags" *ngIf="content.tags"><strong>Tags: </strong> <span *ngFor="let tag of content.tags;" appHoverStyle [fontWeight]='"bold"'>{{ tag }} </span></p>-->
+<!--&lt;!&ndash;    <p class="author"><strong>Author:</strong> {{ content.author }}</p>&ndash;&gt;-->
+<!--  </section>-->
+<!--</article>-->
