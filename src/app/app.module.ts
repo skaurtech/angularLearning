@@ -20,6 +20,9 @@ import {MatInputModule} from "@angular/material/input";
 import {MatDividerModule} from "@angular/material/divider";
 import {FormsModule} from "@angular/forms";
 import { AddContentComponent } from './add-content/add-content.component';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -32,6 +35,8 @@ import { AddContentComponent } from './add-content/add-content.component';
     CreateContentComponent,
     MessagesComponent,
     AddContentComponent,
+    ContentDetailComponent,
+    NotFoundComponent,
 
   ],
   imports: [
@@ -47,6 +52,15 @@ import { AddContentComponent } from './add-content/add-content.component';
     MatDialogModule,
     MatDividerModule,
     FormsModule,
+    RouterModule.forRoot([
+      { path: 'content/:id'
+        , component: ContentDetailComponent
+      },
+      { path: 'content'
+        , component: ContentListComponent },
+      { path: '**'
+        , component: NotFoundComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

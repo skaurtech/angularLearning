@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  font-style: italic;
+}
+
+.type,
+.tags {
+  font-size: 20px;
+}
+
+.content-image {
+  height: 200px;
+  width: 150px;
+  margin: 0 auto;
+  align-content: center;
+  display: inline-block;
+  border: 2px solid black;
+}
+p {
+  font-size: 20px;
+}
+
+article {
+  border-radius: 10px;
+  width: 80%;
+  border: 2px dotted brown;
+  background-color: silver;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+}

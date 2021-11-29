@@ -10,6 +10,7 @@ import {ContentService} from "../services/content.service";
 export class ContentListComponent implements OnInit {
 
   contentList: Content[];
+  message: string;
 
   constructor(private contentService: ContentService) {
   }
