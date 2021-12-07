@@ -3,6 +3,7 @@ import { Content } from '../helper-files/content-interface';
 import {ContentService} from "../services/content.service";
 import {AddContentComponent} from "../add-content/add-content.component";
 import {MatDialog} from "@angular/material/dialog";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-create-content',
@@ -16,7 +17,8 @@ newContent: Content;
 
 error?: string;
   constructor(private contentService: ContentService,
-              public  dialog: MatDialog) {}
+              public  dialog: MatDialog,
+              public snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
   }
@@ -26,6 +28,7 @@ error?: string;
       this.newContent.title &&
       this.newContent.author
     ) {
+      this.snackBar.open('News has been added!');
       this.error = undefined;
       this.contentService
         .addNewContent(this.newContent)
